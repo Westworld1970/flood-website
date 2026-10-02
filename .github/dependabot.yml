@@ -1,0 +1,14 @@
+# Keeps the commit-SHA pins in .github/workflows fresh (task #2229, CONTROLS G8b).
+# Every action is pinned to a full commit SHA with its version in a comment;
+# Dependabot reads that comment and opens one grouped pull request a week when
+# newer versions exist.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      actions:
+        patterns:
+          - "*"
