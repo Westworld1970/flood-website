@@ -1,0 +1,11 @@
+# Secret scan before every commit (task #1418, CONTROLS G9c).
+#
+# On the Mac mini a machine-wide git hook already runs this scan for every
+# repo (source: ewan-intelligence/infrastructure/git-hooks/). This file is what
+# protects any OTHER machine that clones this repo:
+#   brew install pre-commit && pre-commit install
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: 83d9cd684c87d95d656c1458ef04895a7f1cbd8e # frozen: v8.30.1
+    hooks:
+      - id: gitleaks
