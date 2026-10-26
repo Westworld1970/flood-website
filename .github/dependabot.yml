@@ -2,12 +2,17 @@
 # Every action is pinned to a full commit SHA with its version in a comment;
 # Dependabot reads that comment and opens one grouped pull request a week when
 # newer versions exist.
+# Sta 45: weekly Monday 06:00 London, one grouped PR per ecosystem+directory, max 3 open.
 version: 2
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Europe/London"
+    open-pull-requests-limit: 3
     groups:
       actions:
         patterns:
